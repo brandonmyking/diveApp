@@ -6,7 +6,7 @@ import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import ImageZoom from 'react-native-image-pan-zoom';
 import { connect } from 'react-redux';
-import { addDive } from '../redux/ActionCreators';
+import { addDive, testFunction } from '../redux/ActionCreators';
 
 const initialState = {
     letter: '',
@@ -22,8 +22,10 @@ const initialState = {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addDive: (dive) => dispatch(addDive(dive))
+    addDive: (dive) => dispatch(addDive(dive)),
+    testFunction: (test) => dispatch(testFunction(test))
 });
+
 
 class AddDive extends React.Component {
     constructor(props) {
@@ -65,6 +67,7 @@ class AddDive extends React.Component {
         this.props.addDive(dive);
         this.presentLocalNotification();
         this.clearForms();
+        this.props.testFunction('test');
     }
 
     clearForms() {

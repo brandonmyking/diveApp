@@ -6,7 +6,8 @@ import { resetDives } from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
   return {
-    dives: state.dives
+    dives: state.dives,
+    test: state.testConst
   }
 }
 
@@ -17,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
 function HomeScreen(props) {
   return (
     <ScrollView style={styles.container}>
-      <DiveLog dives={props.dives.data} resetDives={props.resetDives} />
+      <DiveLog test={props.test.test_data} dives={props.dives.data} resetDives={props.resetDives} />
     </ScrollView>
   );
 }

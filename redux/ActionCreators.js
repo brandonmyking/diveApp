@@ -9,3 +9,8 @@ export const addDive = (dive) => ({
 export const resetDives = () => ({
     type: ActionTypes.RESET_DIVES
 })
+
+export const testFunction = (testInfo) => ({
+    type: ActionTypes.TEST_TYPE,
+    payload: testInfo
+})

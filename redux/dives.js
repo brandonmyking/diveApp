@@ -1,18 +1,18 @@
 import * as ActionTypes from './ActionTypes';
 
 const initialState = {
-    dives: []
+    data: []
 }
 
 export const dives = (state = initialState, action) => {
     switch (action.type) {
         case ActionTypes.ADD_DIVE:
-            const id = state.dives.length;
+            const id = state.data.length;
             console.log(state);
-            return {...state, dives: [...state.dives, {id: id, ...action.payload}]}
+            return {...state, data: [...state.data, {id: id, ...action.payload}]}
         case ActionTypes.RESET_DIVES:
             console.log(state);
-            return {...state, dives: []}
+            return {...state, data: []}
         default:
             return state;
     }
